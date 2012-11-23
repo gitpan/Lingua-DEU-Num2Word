@@ -1,7 +1,7 @@
 # For Emacs: -*- mode:cperl; mode:folding; coding:utf-8 -*-
 
 package Lingua::DEU::Num2Word;
-# ABSTRACT: Lingua::DEU::Num2Word is module for converting numbers into their representation in German. Converts whole numbers from 0 up to 999 999 999.
+# ABSTRACT: Lingua::DEU::Num2Word is module for converting numbers into their written representationin German.
 
 # {{{ use block
 
@@ -15,10 +15,10 @@ use Perl6::Export::Attrs;
 # }}}
 # {{{ variable declarations
 
-my  Readonly::Scalar $COPY    = 'Copyright (C) PetaMem, s.r.o. 2002-present';
+my Readonly::Scalar $COPY = 'Copyright (C) PetaMem, s.r.o. 2002-present';
 
-my($ver)                       = ('$Rev: 440 $' =~ m{(\d+)}xms);
-our Readonly::Scalar $VERSION = $ver / 10_000;
+my($ver)     = ('$Rev: 478 $' =~ m{(\d+)}xms);
+our $VERSION = $ver / 10_000;
 
 # }}}
 
@@ -90,12 +90,12 @@ Lingua::DEU::Num2Word
 
 =head1 VERSION
 
-version 0.044
+version 0.0478
 
-positive number to text convertor for German.
+Positive number to text convertor for German.
 Output text is in utf-8 encoding.
 
-=head2 $Rev: 440 $
+=head2 $Rev: 478 $
 
 ISO 639-3 namespace
 
@@ -109,8 +109,10 @@ ISO 639-3 namespace
 
 =head1 DESCRIPTION
 
-Lingua::DEU::Num2Word is module for converting numbers into their representation
-in German. Converts whole numbers from 0 up to 999 999 999.
+Lingua::DEU::Num2Word is module for converting numbers into their written
+representationin German.
+
+Converts whole numbers from 0 up to 999 999 999.
 
 =cut
 

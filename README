@@ -1,9 +1,9 @@
 
 
 This archive contains the distribution Lingua-DEU-Num2Word,
-version 0.044:
+version 0.0478:
 
-  Lingua::DEU::Num2Word is module for converting numbers into their representation in German. Converts whole numbers from 0 up to 999 999 999.
+  Lingua::DEU::Num2Word is module for converting numbers into their written representationin German.
 
 source: http://opensource.org
 

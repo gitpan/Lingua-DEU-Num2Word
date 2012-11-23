@@ -1,5 +1,5 @@
 ---
-abstract: 'Lingua::DEU::Num2Word is module for converting numbers into their representation in German. Converts whole numbers from 0 up to 999 999 999.'
+abstract: 'Lingua::DEU::Num2Word is module for converting numbers into their written representationin German.'
 author:
   - 'PetaMem s.r.o. <info@petamem.com>'
 build_requires:
@@ -19,4 +19,4 @@ requires:
   strict: 0
   utf8: 0
   warnings: 0
-version: 0.044
+version: 0.0478
