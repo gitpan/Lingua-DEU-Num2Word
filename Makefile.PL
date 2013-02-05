@@ -9,7 +9,7 @@ use ExtUtils::MakeMaker 6.30;
 
 
 my %WriteMakefileArgs = (
-  "ABSTRACT" => "Lingua::DEU::Num2Word is module for converting numbers into their written representationin German.",
+  "ABSTRACT" => "Number 2 word conversion in DEU.",
   "AUTHOR" => "PetaMem s.r.o. <info\@petamem.com>",
   "BUILD_REQUIRES" => {
     "Test::More" => 0
@@ -28,7 +28,7 @@ my %WriteMakefileArgs = (
     "utf8" => 0,
     "warnings" => 0
   },
-  "VERSION" => "0.0478",
+  "VERSION" => "0.0577",
   "test" => {
     "TESTS" => "t/*.t"
   }

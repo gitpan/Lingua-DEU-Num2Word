@@ -1,9 +1,9 @@
 
 
 This archive contains the distribution Lingua-DEU-Num2Word,
-version 0.0478:
+version 0.0577:
 
-  Lingua::DEU::Num2Word is module for converting numbers into their written representationin German.
+  Number 2 word conversion in DEU.
 
 source: http://opensource.org
 
