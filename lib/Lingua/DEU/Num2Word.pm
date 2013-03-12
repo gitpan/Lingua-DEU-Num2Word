@@ -5,6 +5,8 @@ package Lingua::DEU::Num2Word;
 
 # {{{ use block
 
+use 5.10.1;
+
 use strict;
 use warnings;
 use utf8;
@@ -17,7 +19,7 @@ use Perl6::Export::Attrs;
 
 my Readonly::Scalar $COPY = 'Copyright (C) PetaMem, s.r.o. 2002-present';
 
-our $VERSION = 0.0577;
+our $VERSION = 0.0682;
 
 # }}}
 
@@ -89,12 +91,12 @@ Lingua::DEU::Num2Word
 
 =head1 VERSION
 
-version 0.0577
+version 0.0682
 
 Positive number to text convertor for German.
 Output text is in utf-8 encoding.
 
-=head2 $Rev: 577 $
+=head2 $Rev: 682 $
 
 ISO 639-3 namespace
 

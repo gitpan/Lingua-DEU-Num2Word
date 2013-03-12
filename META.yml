@@ -16,7 +16,8 @@ name: Lingua-DEU-Num2Word
 requires:
   Perl6::Export::Attrs: 0
   Readonly: 0
+  perl: v5.10.1
   strict: 0
   utf8: 0
   warnings: 0
-version: 0.0577
+version: 0.0682
