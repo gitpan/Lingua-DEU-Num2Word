@@ -10,6 +10,7 @@ use strict;
 use warnings;
 use utf8;
 
+use Test::Exception;
 use Test::More;
 
 # }}}
@@ -45,16 +46,6 @@ use Lingua::DEU::Num2Word           qw(:ALL);
          'eintausend',
          '1000'
      ],
-     [
-         100000000000,
-         undef,
-         'out of range'
-     ],
-     [
-         undef,
-         'null',
-         'undef -> 0'
-     ],
  ];
 
 for my $test (@{$n2d}) {
@@ -63,6 +54,12 @@ for my $test (@{$n2d}) {
     is($got, $exp, $test->[2] . ' in German');
     $tests++;
 }
+
+dies_ok( sub {  num2deu_cardinal(100000000000); }, 'out of range');
+$tests++;
+
+dies_ok( sub { num2deu_cardinal(undef); }, 'undef input args' );
+$tests++;
 
 # }}}
 

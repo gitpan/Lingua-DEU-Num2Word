@@ -11,6 +11,7 @@ use strict;
 use warnings;
 use utf8;
 
+use Carp;
 use Readonly;
 use Perl6::Export::Attrs;
 
@@ -19,14 +20,20 @@ use Perl6::Export::Attrs;
 
 my Readonly::Scalar $COPY = 'Copyright (C) PetaMem, s.r.o. 2002-present';
 
-our $VERSION = 0.0682;
+our $VERSION = 0.1101;
 
 # }}}
 
 # {{{ num2deu_cardinal                 convert number to text
 
 sub num2deu_cardinal :Export {
-    my $positive = shift // return 'null';
+    my $positive = shift;
+
+    croak 'You should specify a number from interval [0, 999_999_999]'
+        if    !defined $positive
+           || $positive !~ m{\A\d+\z}xms
+           || $positive < 0
+           || $positive > 999_999_999;
 
     my @tokens1 = qw(null ein zwei drei vier fünf sechs sieben acht neun zehn elf zwölf);
     my @tokens2 = qw(zwanzig dreissig vierzig fünfzig sechzig siebzig achtzig neunzig hundert);
@@ -87,18 +94,25 @@ __END__
 
 =head1 NAME
 
-Lingua::DEU::Num2Word
+=head2 Lingua::DEU::Num2Word  $Rev: 1061 $
 
 =head1 VERSION
 
-version 0.0682
+version 0.1101
 
-Positive number to text convertor for German.
-Output text is in utf-8 encoding.
+Number 2 word conversion in DEU.
 
-=head2 $Rev: 682 $
+Lingua::DEU::Num2Word is module for converting numbers into their written
+representationin German. Converts whole numbers from 0 up to 999 999 999.
 
-ISO 639-3 namespace
+Text must be encoded in UTF-8.
+
+=cut
+
+# }}}
+# {{{ SYNOPSIS
+
+=pod
 
 =head1 SYNOPSIS
 
@@ -108,31 +122,41 @@ ISO 639-3 namespace
 
  print $text || "sorry, can't convert this number into german language.";
 
-=head1 DESCRIPTION
+=cut
 
-Number 2 word conversion in DEU.
+# }}}
+# {{{ Functions Reference
 
-Lingua::DEU::Num2Word is module for converting numbers into their written
-representationin German. Converts whole numbers from 0 up to 999 999 999.
+=pod
+
+=head1 Functions Reference
+
+=over 2
+
+=item B<num2deu_cardinal> (positional)
+
+  1   num    number to convert
+  =>  str    converted string
+      undef  if input number is not known
+
+Convert number to text representation.
+
+
+=back
 
 =cut
 
 # }}}
-# {{{ Functions reference
+# {{{ EXPORTED FUNCTIONS
 
 =pod
 
-=head2 Functions Reference
+=head1 EXPORT_OK
 
-=over
+=over 2
 
-=item num2deu_cardinal (positional)
+=item num2deu_cardinal
 
-  1   number  number to convert
-  =>  string  converted string
-      undef   if input number is not known
-
-Convert number to text representation.
 
 =back
 
@@ -143,26 +167,15 @@ Convert number to text representation.
 
 =pod
 
-=head1 EXPORT_OK
-
-num2deu_cardinal
-
-=head1 KNOWN BUGS
-
-None.
-
 =head1 AUTHOR
 
-Richard Jelinek <info@petamem.com>
-Roman Vasicek <info@petamem.com>
+ coding, maintenance, refactoring, extensions, specifications:
+
+   Roman Vasicek <info@petamem.com>
 
 =head1 COPYRIGHT
 
 Copyright (C) PetaMem, s.r.o. 2002-present
-
-=head2 LICENSE
-
-Artistic license or BSD license.
 
 =cut
 
