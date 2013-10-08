@@ -20,7 +20,7 @@ use Perl6::Export::Attrs;
 
 my Readonly::Scalar $COPY = 'Copyright (C) PetaMem, s.r.o. 2002-present';
 
-our $VERSION = 0.1101;
+our $VERSION = 0.1106;
 
 # }}}
 
@@ -94,11 +94,11 @@ __END__
 
 =head1 NAME
 
-=head2 Lingua::DEU::Num2Word  $Rev: 1061 $
+=head2 Lingua::DEU::Num2Word  
 
 =head1 VERSION
 
-version 0.1101
+version 0.1106
 
 Number 2 word conversion in DEU.
 
@@ -140,6 +140,7 @@ Text must be encoded in UTF-8.
       undef  if input number is not known
 
 Convert number to text representation.
+Only numbers from interval [0, 999_999_999] will be converted.
 
 
 =back
